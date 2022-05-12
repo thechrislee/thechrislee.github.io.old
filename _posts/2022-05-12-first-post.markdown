@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My first official post on the blog"
-date: 2021-06-31
+date: 2022-05-12
 categories: jekyll blogging
 ---
 
