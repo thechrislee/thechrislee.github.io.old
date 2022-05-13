@@ -79,7 +79,7 @@ postgres=# SELECT version();
 ```
 
 ## Chapter 2 Exercises
-Here are my solutions to the 'Try It Yourself' exercises at the end of chapter 2.
+Here are my solutions to the 'Try It Yourself' exercises at the end of chapter 2. I realize my solutions may not be best practice or leading practice, but I do hope to improve upon that as I work through the book. Specifically, I probably shouldn't run, ```SELECT *```. Also, there should probably be a unique key that links both tables together.
 ```sql
 -- Chapter 2 Exercise 1:
 CREATE TABLE animals(
@@ -112,3 +112,34 @@ VALUES ('Tony the Tiger','Mammalia', 'Carnivora', 'Felidae', 'Panthera', 'P. tig
        ('Tucan Sam', 'Aves', 'Piciformes', 'Ramphastidae', 'Ramphastos', 'Ramphastos toco', '1963-01-01'),
        ('Chester Cheetah', 'Mammalia', 'Carnivora', 'Felidae', 'Acinonyx', 'A. jubatus', '1985-01-01');
 ```
+
+Here I varify what was run previously.
+```
+postgres=# \d
+                 List of relations
+ Schema |        Name        |   Type   |  Owner   
+--------+--------------------+----------+----------
+ public | animal_info        | table    | postgres
+ public | animal_info_id_seq | sequence | postgres
+ public | animals            | table    | postgres
+ public | animals_id_seq     | sequence | postgres
+(4 rows)
+
+postgres=# SELECT * FROM animal_info;
+ id |      name       |  class   |    ord     |    family    |   genus    |     species     | birth_date 
+----+-----------------+----------+------------+--------------+------------+-----------------+------------
+  1 | Tony the Tiger  | Mammalia | Carnivora  | Felidae      | Panthera   | P. tigris       | 1952-01-01
+  2 | Tucan Sam       | Aves     | Piciformes | Ramphastidae | Ramphastos | Ramphastos toco | 1963-01-01
+  3 | Chester Cheetah | Mammalia | Carnivora  | Felidae      | Acinonyx   | A. jubatus      | 1985-01-01
+(3 rows)
+
+postgres=# SELECT * FROM animals;
+ id |      name       | age 
+----+-----------------+-----
+  1 | Tony the Tiger  |  70
+  2 | Tucan Sam       |  59
+  3 | Chester Cheetah |  37
+(3 rows)
+```
+
+That's enough for now. I'll do my best to document my progress here as I go through the book.
