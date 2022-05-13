@@ -101,7 +101,7 @@ CREATE TABLE animal_info(
 ```
 
 ```sql
--- Chapter Exercise 2:
+-- Chapter 2 Exercise 2:
 INSERT INTO animals(name, age)
 VALUES ('Tony the Tiger', 70),
            ('Tucan Sam', 59),
