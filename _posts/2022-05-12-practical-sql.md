@@ -4,7 +4,7 @@ title:  Practical SQL
 date:   2022-05-12 20:10
 categories: sql containers python
 ---
-My original motivation behind this blog was to document my progress while working through 'Practical SQL, 2nd Edition', by Anthony DeBarros. I have a big interest in data, the gathering, andthe manipulation of. Maybe that falls in line with data analysis. With that said, I am not a statistician, just a sysadmin trying to grow my skills. 
+My original motivation behind this blog was to document my progress while working through 'Practical SQL, 2nd Edition', by Anthony DeBarros. I have a big interest in data, the gathering, andthe manipulation of. Maybe that falls in line with data analysis. With that said, I am not a statistician or data analyst. Just a sysadmin trying to grow my skills. 
 
 ## Envrionment Setup
 This book uses PostgreSQL. While that is easy enough to install locally, I preferred not to. Instead, I decided to use containers to standup the environment that I will use while working through this book. My laptop is running Fedora, so I am using podman. However, the same commands should work with Docker. 
