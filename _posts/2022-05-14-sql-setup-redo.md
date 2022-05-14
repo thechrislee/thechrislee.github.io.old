@@ -58,7 +58,7 @@ root@postgres:/data#
 ```
 
 ## Practical SQL
-After redoing the setup, I was able to progress through chapters 3 and 4 of Practical SQL 2nd Edition. These weren't too complicated. Chapter 3 covered the basics of writing ```SELECT``` statements. Chapter 4 covered data types. There isn't much else to say at this point, but my answers to the 'Try It Yourself' section are below. Without context, these answers probably mean little to those reading, but I think writing them here helps me out. The repo for this is here, https://github.com/thechrislee/practical-sql-2
+After redoing the setup, I was able to progress through chapters 3 and 4 of Practical SQL 2nd Edition. These weren't too complicated. Chapter 3 covered the basics of writing ```SELECT``` statements. Chapter 4 covered data types. There isn't much else to say at this point, but my answers to the 'Try It Yourself' section are below. Without context, these answers probably mean little to those reading, but I think writing them here helps me out. The repo for this is here, [practical-sql-2](https://github.com/thechrislee/practical-sql-2)
  
 ### Chapter 3 Answers
 ```sql
