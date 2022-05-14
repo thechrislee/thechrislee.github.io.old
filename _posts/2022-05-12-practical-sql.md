@@ -27,12 +27,6 @@ Next I created a specific volume for this deployment. I'll be mapping /var/lib/p
 ```
 $ podman volume create postgres
 ```
-{% raw %}
-```bash
-$ export POSTGRES_MOUNT=$(podman volume inspect postgres --format="{{ .Mountpoint }}")
-```
-{% endraw %}
- 
 run pgadmin in container using the required environment variables...
 
 ```
@@ -49,7 +43,7 @@ $ curl -s localhost:8080/login|grep pgadmin
 
 Run postgres container
 ```
-$ podman run -d --name pg14 --pod postgres --volume=$POSTGRES_MOUNT:/var/lib/pgsql/data:Z -e "POSTGRES_PASSWORD=$POSTGRES_PASSWORD" -e POSTGRES_USER=postgres docker.io/library/postgres
+$ podman run -d --name pg14 --pod postgres --volume=postgres:/var/lib/pgsql/data:Z -e "POSTGRES_PASSWORD=$POSTGRES_PASSWORD" -e POSTGRES_USER=postgres docker.io/library/postgres
 ```
 Connect to postgres container and verify that it is running.
 ```
