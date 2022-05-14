@@ -5,7 +5,7 @@ date:   2022-05-12 20:10
 categories: sql containers python
 ---
 My original motivation behind this blog was to document my progress while working through 'Practical SQL, 2nd Edition', by Anthony DeBarros. I have a big interest in data, the gathering, andthe manipulation of. Maybe that falls in line with data analysis. With that said, I am not a statistician or data analyst. Just a sysadmin trying to grow my skills. 
-
+All setup will be documented in the README of my repo for this as well, https://github.com/thechrislee/practical-sql-2
 ## Envrionment Setup
 This book uses PostgreSQL. While that is easy enough to install locally, I preferred not to. Instead, I decided to use containers to standup the environment that I will use while working through this book. My laptop is running Fedora, so I am using podman. However, the same commands should work with Docker. 
 
@@ -22,7 +22,7 @@ Next I created a pod. Containers in the same pod can communicate with each other
 ```
 $ podman pod create --name postgres --publish 8080:80
 ```
-Next I created a specific volume for this deployment. I'll be mapping /var/lib/postgres to it. In my mind, this will make it easier to migrate to a new version of the database if needed. Thestep after creating it just exports the mountpoint path to an environment variable. I used this when deploying the container.
+Next I created a specific volume for this deployment. I'll be mapping /var/lib/postgres to it. In my mind, this will make it easier to migrate to a new version of the database if needed. ~~Thestep after creating it just exports the mountpoint path to an environment variable. I used this when deploying the container.~~
 
 ```
 $ podman volume create postgres
@@ -43,7 +43,7 @@ $ curl -s localhost:8080/login|grep pgadmin
 
 Run postgres container
 ```
-$ podman run -d --name pg14 --pod postgres --volume=postgres:/var/lib/pgsql/data:Z -e "POSTGRES_PASSWORD=$POSTGRES_PASSWORD" -e POSTGRES_USER=postgres docker.io/library/postgres
+$ podman run -d --name pg14 --pod postgres --volume=postgres:/var/lib/postgresql/data:Z --volume=/home/chris/data:/data:Z -e "POSTGRES_PASSWORD=$POSTGRES_PASSWORD" -e POSTGRES_USER=postgres docker.io/library/postgres
 ```
 Connect to postgres container and verify that it is running.
 ```
